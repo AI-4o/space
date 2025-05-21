@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://space.aisoft.sh
+
+# Sitemaps
+Sitemap: https://space.aisoft.sh/sitemap.xml
