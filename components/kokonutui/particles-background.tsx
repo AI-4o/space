@@ -298,26 +298,364 @@ export default function ParticlesBackground({
           <Link target="_blank" rel="noopener noreferrer" href="http://ai.aisoft.sh" className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-black/90 to-black/50 dark:from-white/90 dark:to-white/50 flex items-center justify-center">
             {subtitle}
           </Link>
-          {/* 
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+            className="mt-8"
+          >
+            <Link
+              href="#about"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium hover:from-purple-700 hover:to-blue-600 transition-all duration-300"
+            >
+              Discover More
+            </Link>
+          </motion.div>
 
- <div onClick={() => {
-            const audio = new Audio('https://www.myinstants.com/it/instant/step-broooooo-99030/?utm_source=copy&utm_medium=sharg');
-            audio.play();
-          }}>
-            <Image 
-              src="/ugello.jpg" 
-              alt="AI" 
-              width={100} 
-              height={100} 
-              className="rounded-full cursor-pointer transition-transform duration-300 hover:scale-110" 
-            />
-        </div>
-
-
-          */}
 
         </motion.div>
+
       </div>
+      {/* Content Sections */}
+      <div className="relative z-10 bg-white/90 dark:bg-black/90 backdrop-blur-sm">
+        {/* About Section */}
+        <section id="about" className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white">About Me</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                I'm Alfredo Ingraldo, an AI Engineer and Entrepreneur passionate about leveraging artificial
+                intelligence to solve complex problems and create innovative solutions.
+              </p>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                With extensive experience in machine learning, deep learning, and natural language processing, I've
+                developed AI systems that transform businesses and enhance user experiences.
+              </p>
+              <div className="flex space-x-4 pt-4">
+                <Link
+                  href="#contact"
+                  className="px-6 py-2 rounded-full border-2 border-purple-600 text-purple-600 dark:text-purple-400 dark:border-purple-400 hover:bg-purple-600 hover:text-white dark:hover:bg-purple-400 dark:hover:text-black transition-all duration-300"
+                >
+                  Contact Me
+                </Link>
+                <Link
+                  href="#projects"
+                  className="px-6 py-2 rounded-full border-2 border-gray-400 text-gray-600 dark:text-gray-300 dark:border-gray-500 hover:bg-gray-600 hover:text-white dark:hover:bg-gray-500 transition-all duration-300"
+                >
+                  View Projects
+                </Link>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="relative aspect-square max-w-md mx-auto"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full opacity-20 blur-2xl"></div>
+              <img
+                src="/placeholder.svg?height=400&width=400"
+                alt="Alfredo Ingraldo"
+                className="rounded-full object-cover w-full h-full relative z-10 border-4 border-white dark:border-gray-800"
+              />
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Expertise Section */}
+        <section className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50 dark:bg-gray-900/50">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white">My Expertise</h2>
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+              Specialized in cutting-edge AI technologies and entrepreneurial ventures
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Artificial Intelligence",
+                description:
+                  "Expert in developing and implementing AI solutions including machine learning models, neural networks, and natural language processing systems.",
+                icon: "Brain",
+              },
+              {
+                title: "Data Science",
+                description:
+                  "Skilled in data analysis, visualization, and extracting actionable insights from complex datasets to drive business decisions.",
+                icon: "BarChart",
+              },
+              {
+                title: "Entrepreneurship",
+                description:
+                  "Experienced in building and scaling tech startups, product development, and creating innovative business models.",
+                icon: "Rocket",
+              },
+              {
+                title: "Deep Learning",
+                description:
+                  "Specialized in designing and training deep neural networks for computer vision, NLP, and other complex AI tasks.",
+                icon: "Network",
+              },
+              {
+                title: "AI Strategy",
+                description:
+                  "Helping businesses integrate AI into their operations and develop comprehensive AI transformation strategies.",
+                icon: "Lightbulb",
+              },
+              {
+                title: "Technical Leadership",
+                description:
+                  "Leading technical teams to deliver high-quality AI products and solutions on time and within budget.",
+                icon: "Users",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-6">
+                  <span className="text-purple-600 dark:text-purple-400 text-2xl">
+                    {/* Icon placeholder - would use Lucide icons in real implementation */}
+                    {item.icon === "Brain" && "🧠"}
+                    {item.icon === "BarChart" && "📊"}
+                    {item.icon === "Rocket" && "🚀"}
+                    {item.icon === "Network" && "🔄"}
+                    {item.icon === "Lightbulb" && "💡"}
+                    {item.icon === "Users" && "👥"}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Featured Projects</h2>
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+              A selection of my most impactful work in AI and technology
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "AI-Powered Analytics Platform",
+                description:
+                  "A comprehensive analytics platform using machine learning to provide predictive insights for businesses.",
+                image: "analytics-platform",
+              },
+              {
+                title: "Natural Language Processing API",
+                description:
+                  "A powerful NLP API that enables sentiment analysis, entity recognition, and text classification.",
+                image: "nlp-api",
+              },
+              {
+                title: "Computer Vision Solution",
+                description: "An advanced computer vision system for real-time object detection and image analysis.",
+                image: "computer-vision",
+              },
+            ].map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={`/placeholder.svg?height=300&width=500&query=${project.image} tech project`}
+                    alt={project.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{project.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                  <Link
+                    href="#"
+                    className="text-purple-600 dark:text-purple-400 font-medium hover:text-purple-700 dark:hover:text-purple-300 transition-colors"
+                  >
+                    Learn more →
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mt-12"
+          >
+            <Link
+              href="#"
+              className="px-6 py-3 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
+            >
+              View All Projects
+            </Link>
+          </motion.div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto bg-gray-50 dark:bg-gray-900/50">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Get In Touch</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Interested in working together or have a question? Feel free to reach out to me directly.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                    <span className="text-purple-600 dark:text-purple-400">✉️</span>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300">alfredo.ingraldo@example.com</p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                    <span className="text-purple-600 dark:text-purple-400">📱</span>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300">+1 (555) 123-4567</p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                    <span className="text-purple-600 dark:text-purple-400">📍</span>
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300">Milan, Italy</p>
+                </div>
+              </div>
+              <div className="flex space-x-4 pt-4">
+                <Link
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
+                >
+                  <span>𝕏</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
+                >
+                  <span>in</span>
+                </Link>
+                <Link
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
+                >
+                  <span>G</span>
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg"
+            >
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    [Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    placeholder="Your message..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium hover:from-purple-700 hover:to-blue-600 transition-all duration-300"
+                >
+                  Send Message
+                </button>
+              </form>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-8 px-4 border-t border-gray-200 dark:border-gray-800 text-center text-gray-600 dark:text-gray-400">
+          <p>© {new Date().getFullYear()} Alfredo Ingraldo. All rights reserved.</p>
+        </footer>
+      </div>
+
     </div>
   )
 }
+
+
+<div className={cn("relative w-full h-screen overflow-hidden", "bg-white dark:bg-black", className)}>
+  <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+  <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+    carlino
+  </div>
+
+
+  <div className="relative z-10 bg-white/90 dark:bg-black/90 backdrop-blur-sm">
+    pipino
+  </div>
+</div>
