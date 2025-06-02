@@ -362,7 +362,7 @@ export default function ParticlesBackground({
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full opacity-20 blur-2xl"></div>
               <img
-                src="/placeholder.svg?height=400&width=400"
+                src="ai.jpeg"
                 alt="Alfredo Ingraldo"
                 className="rounded-full object-cover w-full h-full relative z-10 border-4 border-white dark:border-gray-800"
               />
@@ -406,9 +406,9 @@ export default function ParticlesBackground({
                 icon: "Rocket",
               },
               {
-                title: "Deep Learning",
+                title: "Web Development",
                 description:
-                  "Specialized in designing and training deep neural networks for computer vision, NLP, and other complex AI tasks.",
+                  "Vast experience in crafting web apps, prefereably with React, Nextjs and Python.",
                 icon: "Network",
               },
               {
@@ -468,21 +468,21 @@ export default function ParticlesBackground({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "AI-Powered Analytics Platform",
+                title: "AI-Powered documents analysis and comparison",
                 description:
-                  "A comprehensive analytics platform using machine learning to provide predictive insights for businesses.",
-                image: "analytics-platform",
+                  "A comprehensive python cli that enables the user to get insights over  documents in xlsx format.",
+                image: "anya0.jpeg",
               },
               {
-                title: "Natural Language Processing API",
+                title: "Web-Slayer",
                 description:
-                  "A powerful NLP API that enables sentiment analysis, entity recognition, and text classification.",
-                image: "nlp-api",
+                  "A Full Stack web-app that allows you to perform any web user sequence of actions in a programmatic way, from web scraping to logins to message sending.",
+                image: "pirate.jpeg",
               },
               {
-                title: "Computer Vision Solution",
-                description: "An advanced computer vision system for real-time object detection and image analysis.",
-                image: "computer-vision",
+                title: "Aruba Design System",
+                description: "The web components design system of the Aruba brand, powered by lit.",
+                image: "anya.jpeg",
               },
             ].map((project, index) => (
               <motion.div
@@ -495,7 +495,7 @@ export default function ParticlesBackground({
               >
                 <div className="h-48 overflow-hidden">
                   <img
-                    src={`/placeholder.svg?height=300&width=500&query=${project.image} tech project`}
+                    src={`/${project.image}`}
                     alt={project.title}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -504,7 +504,7 @@ export default function ParticlesBackground({
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{project.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                   <Link
-                    href="#"
+                    href="#contact"
                     className="text-purple-600 dark:text-purple-400 font-medium hover:text-purple-700 dark:hover:text-purple-300 transition-colors"
                   >
                     Learn more →
@@ -522,7 +522,7 @@ export default function ParticlesBackground({
             className="text-center mt-12"
           >
             <Link
-              href="#"
+              href="https://github.com/AI-4o?tab=repositories"
               className="px-6 py-3 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300"
             >
               View All Projects
@@ -549,19 +549,19 @@ export default function ParticlesBackground({
                   <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
                     <span className="text-purple-600 dark:text-purple-400">✉️</span>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300">alfredo.ingraldo@example.com</p>
+                  <p className="text-gray-700 dark:text-gray-300">ai@aisoft.sh</p>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
                     <span className="text-purple-600 dark:text-purple-400">📱</span>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300">+1 (555) 123-4567</p>
+                  <p className="text-gray-700 dark:text-gray-300">+39 3281033780</p>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
                     <span className="text-purple-600 dark:text-purple-400">📍</span>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300">Milan, Italy</p>
+                  <p className="text-gray-700 dark:text-gray-300">Viareggio, Italy</p>
                 </div>
               </div>
               <div className="flex space-x-4 pt-4">
@@ -596,7 +596,7 @@ export default function ParticlesBackground({
               <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    [Name
+                    Name
                   </label>
                   <input
                     type="text"
@@ -640,7 +640,7 @@ export default function ParticlesBackground({
 
         {/* Footer */}
         <footer className="py-8 px-4 border-t border-gray-200 dark:border-gray-800 text-center text-gray-600 dark:text-gray-400">
-          <p>© {new Date().getFullYear()} Alfredo Ingraldo. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AISOFT. All rights reserved.</p>
         </footer>
       </div>
 
