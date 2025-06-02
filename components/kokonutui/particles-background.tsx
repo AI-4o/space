@@ -7,6 +7,8 @@ import Link from "next/link"
 import { useState } from "react"
 import Image from "next/image"
 import "./style.css"
+import { sendMail } from "@/app/actions/mailing"
+import { useActionState } from 'react';
 
 const GRAVITY_STRENGTH = 15000;   // un filo più alto
 const GRAVITY_RADIUS = 150;     // raggio visivo più ampio
@@ -119,6 +121,16 @@ interface Particle {
   life: number
   maxLife: number
 }
+export interface mail {
+  name?: string,
+  message?: string,
+  email?: string,
+  errors?: {
+    email?: string[]
+    name?: string[]
+    message?: string[]
+  }
+}
 
 export default function ParticlesBackground({
   title = "Particles Background",
@@ -131,6 +143,14 @@ export default function ParticlesBackground({
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const noise = createNoise()
   const [className, setClassName] = useState("")
+
+  const initialState: mail = {
+    name: "",
+    message: '',
+    email: "",
+  }
+  const [state, formAction, pending] = useActionState<mail>(sendMail, initialState);
+
 
   useEffect(() => {
 
@@ -594,7 +614,7 @@ export default function ParticlesBackground({
               viewport={{ once: true, margin: "-100px" }}
               className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg"
             >
-              <form className="space-y-6">
+              <form className="space-y-6" action={formAction}>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Name
@@ -602,6 +622,7 @@ export default function ParticlesBackground({
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                     placeholder="Your name"
                   />
@@ -613,6 +634,7 @@ export default function ParticlesBackground({
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                     placeholder="your.email@example.com"
                   />
@@ -623,6 +645,7 @@ export default function ParticlesBackground({
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                     placeholder="Your message..."
@@ -630,7 +653,7 @@ export default function ParticlesBackground({
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium hover:from-purple-700 hover:to-blue-600 transition-all duration-300"
+                  className="w-full px-6 py sa.-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium hover:from-purple-700 hover:to-blue-600 transition-all duration-300"
                 >
                   Send Message
                 </button>
