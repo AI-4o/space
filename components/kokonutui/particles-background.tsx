@@ -331,11 +331,11 @@ export default function ParticlesBackground({
             >
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white">About Me</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                I'm Alfredo Ingraldo, an AI Engineer and Entrepreneur passionate about leveraging artificial
-                intelligence to solve complex problems and create innovative solutions.
+                I'm Alfredo Ingraldo (AI for short), an AI Engineer and Entrepreneur passionate about leveraging artificial
+                intelligence to solve complex problems and create innovative solutions that make businesses stand out.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                With extensive experience in machine learning, deep learning, and natural language processing, I've
+                With extensive experience in machine learning, deep learning, and web development, I've
                 developed AI systems that transform businesses and enhance user experiences.
               </p>
               <div className="flex space-x-4 pt-4">
@@ -379,9 +379,10 @@ export default function ParticlesBackground({
             viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white">My Expertise</h2>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Our Mission</h2>
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              Specialized in cutting-edge AI technologies and entrepreneurial ventures
+              We specialize in cutting-edge integration of AI technologies for automation and optimization software,
+              in short: we will make your business stand out!
             </p>
           </motion.div>
 
