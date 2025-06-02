@@ -122,7 +122,7 @@ interface Particle {
 export default function ParticlesBackground({
   title = "Particles Background",
   subtitle = "Make your website stand out",
-  particleCount = 3000,
+  particleCount = 6000,
   noiseIntensity = 0.003,
   particleSize = { min: 0.5, max: 2 },
   lightMode = false,
@@ -283,9 +283,9 @@ export default function ParticlesBackground({
   }, [particleCount, noiseIntensity, particleSize, noise, lightMode])
 
   return (
-    <div className={cn("relative w-full h-screen overflow-hidden", "bg-white dark:bg-black", className)}>
+    <div className={cn("relative w-full min-h-screen overflow-auto", "bg-white dark:bg-black", className)}>
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-screen">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -317,7 +317,7 @@ export default function ParticlesBackground({
 
       </div>
       {/* Content Sections */}
-      <div className="relative z-10 bg-white/90 dark:bg-black/90 backdrop-blur-sm">
+      <div className="relative z-10 bg-white/90 dark:bg-black/90 backdrop-blur-sm w-full py-20">
         {/* About Section */}
         <section id="about" className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -648,14 +648,4 @@ export default function ParticlesBackground({
 }
 
 
-<div className={cn("relative w-full h-screen overflow-hidden", "bg-white dark:bg-black", className)}>
-  <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-  <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-    carlino
-  </div>
 
-
-  <div className="relative z-10 bg-white/90 dark:bg-black/90 backdrop-blur-sm">
-    pipino
-  </div>
-</div>
