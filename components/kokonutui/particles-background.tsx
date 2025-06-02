@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { useState } from "react"
 import Image from "next/image"
+import "./style.css"
 
 const GRAVITY_STRENGTH = 15000;   // un filo più alto
 const GRAVITY_RADIUS = 150;     // raggio visivo più ampio
@@ -317,7 +318,7 @@ export default function ParticlesBackground({
 
       </div>
       {/* Content Sections */}
-      <div className="relative z-10 bg-white/90 dark:bg-black/90 backdrop-blur-sm w-full py-20">
+      <div className="sections-divs relative z-10 bg-white/90 dark:bg-black/90 backdrop-blur-sm w-full py-20" >
         {/* About Section */}
         <section id="about" className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
