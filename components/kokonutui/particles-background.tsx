@@ -573,13 +573,13 @@ export default function ParticlesBackground({
                   <span>𝕏</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/alfredo-ingraldo-a85913217/"
                   className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
                 >
                   <span>in</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://github.com/AI-4o?tab=repositories"
                   className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"
                 >
                   <span>G</span>
