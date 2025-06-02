@@ -62,7 +62,9 @@ export async function sendMail(initialState: mail, formData: FormData): Promise<
               Dear ${name}, thank you for writing to AISOFT! We will reach out to you as soon as possible!
         </p>
         <p style="margin-top: 30px; font-size: 14px; color: #6b7280;">
-          Per qualsiasi supporto, contattaci a <a href="mailto:support@aisoft.sh" style="color: #7c3aed; text-decoration: none;">support@aisoft.sh</a>.
+          This is an automatic email...
+            
+          For further infos, please contact our indians support team at <a href="mailto:support@aisoft.sh" style="color: #7c3aed; text-decoration: none;">support@aisoft.sh</a>.
         </p>
       </div>
       
